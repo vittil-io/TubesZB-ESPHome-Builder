@@ -2,6 +2,17 @@ packages:
   zwave_web: !include ../packages/zwave-web.yaml
   network_settings: !include ../packages/network-settings.yaml
 
+substitutions:
+  # Vittil crash reports: the project key from Settings in the Vittil app
+  vittil_project_key: "ecr_your_project_key"
+
+external_components:
+  - source: github://vittil-io/vittil
+    components: [vittil]
+
+vittil:
+  project_key: ${vittil_project_key}
+
 esphome:
   name: tubeszb-zw
   project:
